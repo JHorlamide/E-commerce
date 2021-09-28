@@ -24,6 +24,8 @@ const CartScreen = ({ match, location, history }) => {
 	/* Get cartItems from  cart */
 	const { cartItems } = cart;
 
+	console.log('CartItems: ', cartItems)
+
 	useEffect(() => {
 		const source = axios.CancelToken.source();
 		if (productId) dispatch(addToCart(productId, qty, source));
@@ -53,7 +55,7 @@ const CartScreen = ({ match, location, history }) => {
 					<ListGroup variant='flush'>
 						{cartItems.map((item) => {
 							return (
-								<ListGroup.Item key={item.product}>
+								<ListGroup.Item key={item.productId}>
 									<Row>
 										{/* Product Image */}
 										<Col md={2}>

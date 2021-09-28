@@ -13,12 +13,10 @@ export const addToCart = (id, qty, source) => {
 				cancelToken: source.token,
 			});
 
-			console.log('From cart action', data);
-
 			dispatch({
 				type: CART_ADD_ITEM,
 				payload: {
-					product: data._id,
+					productId: data._id,
 					name: data.name,
 					image: data.image,
 					price: data.price,

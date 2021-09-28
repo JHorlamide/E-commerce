@@ -17,14 +17,14 @@ export const cartReducer = (
       const item = payload;
 
       const existItem = state.cartItems.find((cartItem) => {
-        return cartItem.product === item.product;
+        return cartItem.productId === item.productId;
       });
 
       if (existItem) {
         return {
           ...state,
           cartItems: state.cartItems.map((cartItem) => {
-            return cartItem.product === existItem.product ? item : cartItem;
+            return cartItem.productId === existItem.productId ? item : cartItem;
           }),
         };
       } else {

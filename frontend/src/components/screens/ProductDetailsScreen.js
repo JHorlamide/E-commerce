@@ -36,6 +36,8 @@ const ProductScreen = ({ history, match }) => {
 
 	const { product, loading } = useSelector((state) => state.productList);
 
+	console.log("ProductDetails Screen: ", product);
+
 	const productCreateReview = useSelector((state) => state.productCreateReview);
 	const { success: successProductReview, error: productReviewError } =
 		productCreateReview;
@@ -176,7 +178,7 @@ const ProductScreen = ({ history, match }) => {
 					<Row>
 						<Col md={6}>
 							<h2>Reviews</h2>
-							{product.reviews.length === 0 && (
+							{product && product.reviews.length === 0 && (
 								<Alert variant='primary'>No Reviews</Alert>
 							)}
 							<ListGroup variant='flush'>
