@@ -39,7 +39,7 @@ userSchema.methods.generateAuthToken = function () {
     isAdmin: this.isAdmin,
   };
 
-  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '30d' });
+  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1d' });
 
   return token;
 };
