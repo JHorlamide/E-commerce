@@ -38,7 +38,8 @@ const route = (app) => {
 		app.use(express.static(path.join(__dirname, '/frontend/build')));
 
 		app.use('*', (req, res) => {
-			console.log('Olamide testing: ', __dirname)
+			console.log('Olamide testing: ', __dirname);
+			
 			return res.sendFile(
 				path.resolve(__dirname, 'frontend', 'build', 'index.html')
 			);

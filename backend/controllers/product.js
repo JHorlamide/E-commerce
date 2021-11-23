@@ -63,6 +63,7 @@ export const getProducts = asyncMiddleware(async (req, res) => {
  * ***/
 export const getProductById = asyncMiddleware(async (req, res) => {
 	const product = await Product.findById(req.params.id);
+	
 	if (!product) {
 		res.status(404);
 		throw new Error('Product not found');
